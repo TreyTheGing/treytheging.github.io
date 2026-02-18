@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trey The Ging</title>
+
 <style>
 body { 
     margin: 0; 
@@ -11,39 +12,39 @@ body {
     background: #0f0f12; 
     color: white; 
     text-align: center; 
-    padding: 0; 
-    position: relative; 
 }
 
-/* Small logo (top-right) */
-#logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 80px;
-    height: auto;
-}
-
-/* Header section */
+/* ===== Fixed Header ===== */
 header {
-    padding: 80px 20px 40px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #111;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 
-/* Large centered logo */
-#logo-small {
-    width: 220px;  /* Adjust size as needed */
+/* Large logo centered */
+#logo-large {
+    width: 200px;
     height: auto;
-    margin-bottom: 20px;
 }
 
-/* Header title */
-h1 { 
-    margin: 0; 
-    font-size: 2.5em;
+/* Small logo far right */
+#logo-small {
+    position: absolute;
+    right: 20px;
+    width: 70px;
+    height: auto;
+}
+
+/* Push page content below fixed header */
+.content {
+    padding-top: 190px;
 }
 
 /* Paragraph */
@@ -69,21 +70,12 @@ a:hover {
 }
 </style>
 </head>
-<body>
 
-<!-- Small logo in top-right (optional) -->
-<img src="logo-small.png" alt="Trey The Ging Logo Small" id="logo-small">
+<body>
 
 <header>
     <!-- Large centered logo -->
     <img src="logo-large.png" alt="Trey The Ging Logo Large" id="logo-large">
-    <p>Social Links</p>
-</header>
 
-<a href="https://instagram.com/treytheging" target="_blank">Instagram</a>
-<a href="https://reddit.com/u/treytheging" target="_blank">Reddit</a>
-<a href="https://youtube.com/@treytheging" target="_blank">YouTube</a>
-<a href="https://discord.com/users/treytheging" target="_blank">Discord</a>
-
-</body>
-</html>
+    <!-- Small logo on far right -->
+    <img src="logo-small.png" alt="Trey Th
