@@ -6,22 +6,25 @@
 <title>Trey The Ging</title>
 
 <style>
+:root{
+    --header-height: 80px;
+    --logo-width: 70px;
+    --social-btn-size: 42px;
+    --social-icon-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body { 
     margin: 0; 
     font-family: Arial, sans-serif; 
     background: #0f0f12; 
     color: white; 
-    text-align: center; 
 }
 
-:root{
-    --header-height: 80px;
-    --logo-small-width: 70px;
-    --social-btn-size: 42px;
-    --social-icon-size: 20px;
-}
-
-/* ===== Fixed Header ===== */
+/* ===== Fixed Responsive Header ===== */
 header {
     position: fixed;
     top: 0;
@@ -29,70 +32,99 @@ header {
     width: 100%;
     height: var(--header-height);
     background: white;
-    color: #111;
     display: flex;
     align-items: center;
-    justify-content: center; /* keeps logo centered */
+    justify-content: space-between;
+    padding: 0 24px;
     z-index: 1000;
 }
 
-/* Centered logo */
+/* Center logo wrapper */
+.logo-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 #logo-small {
-    width: var(--logo-small-width);
+    width: var(--logo-width);
     height: auto;
 }
 
-/* Push page content below fixed header */
-.content {
-    padding-top: calc(var(--header-height) + 30px);
-}
-
-/* ===== Header social icons (far right) ===== */
+/* Social icons container */
 #social-links {
-    position: absolute;
-    right: 20px; /* move fully to far right */
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
-    flex-direction: row;
     gap: 12px;
 }
 
 .social-btn {
     width: var(--social-btn-size);
     height: var(--social-btn-size);
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: #D35400;
-    color: white;
     border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 .social-btn:hover {
     background: black;
-    color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
-.social-btn img { 
-    width: var(--social-icon-size); 
-    height: var(--social-icon-size); 
-    display: block; 
+.social-btn img {
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
 }
 
-/* Responsive */
-@media (max-width: 600px){
+/* Push content below header */
+.content {
+    padding-top: calc(var(--header-height) + 40px);
+    text-align: center;
+}
+
+/* ========================= */
+/* ===== Mobile Styles ===== */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    :root{
+        --header-height: 70px;
+        --logo-width: 50px;
+        --social-btn-size: 38px;
+        --social-icon-size: 20px;
+    }
+
+    header {
+        padding: 0 16px;
+    }
+
+    #social-links {
+        gap: 8px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
     :root{
         --header-height: 64px;
-        --logo-small-width: 48px;
-        --social-btn-size: 48px;
-        --social-icon-size: 24px;
+        --logo-width: 44px;
+        --social-btn-size: 44px;
+        --social-icon-size: 22px;
     }
-    header{height:var(--header-height);}
-    .content{padding-top:calc(var(--header-height) + 18px)}
+
+    header {
+        padding: 0 12px;
+    }
+
+    /* Stack icons slightly tighter on very small screens */
+    #social-links {
+        gap: 6px;
+    }
+
 }
 </style>
 </head>
@@ -101,10 +133,15 @@ header {
 
 <header>
 
-    <!-- Centered logo -->
-    <img src="logo-small.png" alt="Trey The Ging Logo" id="logo-small">
+    <!-- Empty spacer (left side balance) -->
+    <div style="flex:1;"></div>
 
-    <!-- Social icons far right -->
+    <!-- Centered Logo -->
+    <div class="logo-wrapper">
+        <img src="logo-small.png" alt="Trey The Ging Logo">
+    </div>
+
+    <!-- Social Icons (Right Side) -->
     <div id="social-links">
         <a class="social-btn" href="https://instagram.com/treytheging" target="_blank">
             <img src="instagram.png" alt="Instagram">
@@ -126,7 +163,7 @@ header {
 </header>
 
 <div class="content">
-    <!-- Page content goes here -->
+    <!-- Page content -->
 </div>
 
 </body>
