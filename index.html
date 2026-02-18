@@ -16,11 +16,9 @@ body {
 
 :root{
     --header-height: 80px;
-    --logo-large-width: 200px;
     --logo-small-width: 70px;
     --social-btn-size: 42px;
     --social-icon-size: 20px;
-    --social-right-offset: 240px;
 }
 
 /* ===== Fixed Header ===== */
@@ -34,23 +32,12 @@ header {
     color: #111;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* keeps logo centered */
     z-index: 1000;
 }
 
-/* Large logo centered */
-#logo-large {
-    width: var(--logo-large-width);
-    height: auto;
-    max-width: 60vw;
-}
-
-/* Small logo far right */
+/* Centered logo */
 #logo-small {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     width: var(--logo-small-width);
     height: auto;
 }
@@ -60,73 +47,51 @@ header {
     padding-top: calc(var(--header-height) + 30px);
 }
 
-/* Paragraph */
-p { 
-    font-size: 1.2em; 
-}
-
-/* Content social links styling (kept for page fallback) */
-.content a { 
-    display: block; 
-    margin: 10px auto; 
-    padding: 12px 20px; 
-    color: white; 
-    background: #1c1c1f; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    max-width: 250px;
-    transition: all 0.2s ease;
-}
-.content a:hover { 
-    background: white; 
-    color: black; 
-}
-
-/* Header social icons (right side) */
-.social-links-container{position:relative}
+/* ===== Header social icons (far right) ===== */
 #social-links {
     position: absolute;
-    right: var(--social-right-offset);
+    right: 20px; /* move fully to far right */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: row;
     gap: 12px;
 }
+
 .social-btn {
     width: var(--social-btn-size);
     height: var(--social-btn-size);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #D35400; /* burnt orange */
+    background: #D35400;
     color: white;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.15s ease;
 }
+
 .social-btn:hover {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
     transform: translateY(-2px);
 }
-.social-btn img { width: var(--social-icon-size); height: var(--social-icon-size); display: block; }
 
-/* Responsive tweaks for smaller screens */
+.social-btn img { 
+    width: var(--social-icon-size); 
+    height: var(--social-icon-size); 
+    display: block; 
+}
+
+/* Responsive */
 @media (max-width: 600px){
     :root{
         --header-height: 64px;
-        --logo-large-width: 140px;
         --logo-small-width: 48px;
         --social-btn-size: 48px;
         --social-icon-size: 24px;
-        --social-right-offset: 16px;
     }
     header{height:var(--header-height);}
-    #logo-large{width:var(--logo-large-width);}
-    /* hide small logo on very small screens to save space */
-    #logo-small{display:none}
-    #social-links{right:var(--social-right-offset); gap:10px}
     .content{padding-top:calc(var(--header-height) + 18px)}
 }
 </style>
@@ -135,30 +100,29 @@ p {
 <body>
 
 <header>
-    <!-- Large centered logo -->
-    <img src="logo-large.png" alt="Trey The Ging Logo Large" id="logo-large">
 
-    <!-- Header social links on far right (icons) -->
-    <div id="social-links" aria-hidden="false">
-        <a class="social-btn" href="https://instagram.com/treytheging" target="_blank" aria-label="Instagram">
+    <!-- Centered logo -->
+    <img src="logo-small.png" alt="Trey The Ging Logo" id="logo-small">
+
+    <!-- Social icons far right -->
+    <div id="social-links">
+        <a class="social-btn" href="https://instagram.com/treytheging" target="_blank">
             <img src="instagram.png" alt="Instagram">
         </a>
 
-        <a class="social-btn" href="https://reddit.com/u/treytheging" target="_blank" aria-label="Reddit">
+        <a class="social-btn" href="https://reddit.com/u/treytheging" target="_blank">
             <img src="reddit.png" alt="Reddit">
         </a>
 
-        <a class="social-btn" href="https://youtube.com/@treytheging" target="_blank" aria-label="YouTube">
+        <a class="social-btn" href="https://youtube.com/@treytheging" target="_blank">
             <img src="youtube.png" alt="YouTube">
         </a>
 
-        <a class="social-btn" href="https://discord.com/users/treytheging" target="_blank" aria-label="Discord">
+        <a class="social-btn" href="https://discord.com/users/treytheging" target="_blank">
             <img src="discord.png" alt="Discord">
         </a>
     </div>
 
-    <!-- Small logo on far right -->
-    <img src="logo-small.png" alt="Trey The Ging Logo Small" id="logo-small">
 </header>
 
 <div class="content">
