@@ -4,69 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trey Ferguson</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0f0f12;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.container {
-    max-width: 500px;
-    width: 90%;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    font-weight: 800;
-}
-
-.tagline {
-    font-size: 1rem;
-    opacity: 0.6;
-    margin-bottom: 40px;
-}
-
-.links a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid #2a2a30;
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.links a:hover {
-    background: white;
-    color: black;
-    transform: translateY(-2px);
-}
+body { margin:0; font-family:Arial,sans-serif; background:#0f0f12; color:white; text-align:center; padding:50px; }
+a { display:block; margin:10px; padding:12px; color:white; background:#1c1c1f; border-radius:8px; text-decoration:none; }
+a:hover { background:white; color:black; }
 </style>
 </head>
-
 <body>
-<div class="container">
-    <h1>Trey Ferguson</h1>
-    <div class="tagline">Building. Competing. Improving.</div>
-
-    <div class="links">
-        <a href="https://instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
-        <a href="https://reddit.com/u/YOURUSERNAME" target="_blank">Reddit</a>
-        <a href="https://youtube.com/@YOURUSERNAME" target="_blank">YouTube</a>
-        <a href="https://discord.gg/YOURINVITELINK" target="_blank">Discord</a>
-    </div>
-</div>
+<h1>Trey Ferguson</h1>
+<p>Building. Competing. Improving.</p>
+<a href="https://instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
+<a href="https://reddit.com/u/YOURUSERNAME" target="_blank">Reddit</a>
+<a href="https://youtube.com/@YOURUSERNAME" target="_blank">YouTube</a>
+<a href="https://discord.gg/YOURINVITELINK" target="_blank">Discord</a>
 </body>
 </html>
