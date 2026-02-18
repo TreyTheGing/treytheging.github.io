@@ -11,9 +11,12 @@
     --logo-width: 160px;
     --social-btn-size: 42px;
     --social-icon-size: 20px;
+    --header-padding: 20px;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -27,35 +30,30 @@ body {
 /* ===== Fixed Header ===== */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    inset: 0 0 auto 0;
     height: var(--header-height);
-    background: white;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 var(--header-padding);
     z-index: 1000;
 }
 
-/* Centered Logo */
+/* Logo (Left) */
 #logo-small {
     width: var(--logo-width);
     height: auto;
+    display: block;
 }
 
-/* Social icons pinned right */
+/* Social Icons (Right) */
 #social-links {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
-/* Social button styling */
 .social-btn {
     width: var(--social-btn-size);
     height: var(--social-btn-size);
@@ -64,22 +62,23 @@ header {
     justify-content: center;
     background: #D35400;
     border-radius: 50%;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .social-btn:hover {
-    background: black;
+    background: #000;
     transform: translateY(-2px);
 }
 
 .social-btn img {
     width: var(--social-icon-size);
     height: var(--social-icon-size);
+    display: block;
 }
 
-/* Push page content below header */
+/* Page content spacing */
 .content {
-    padding-top: calc(var(--header-height) + 30px);
+    padding-top: calc(var(--header-height) + 40px);
 }
 
 /* ========================= */
@@ -87,15 +86,11 @@ header {
 /* ========================= */
 @media (max-width: 768px) {
     :root{
-        --header-height: 70px;
-        --logo-width: 145px;
+        --header-height: 72px;
+        --logo-width: 135px;
         --social-btn-size: 38px;
         --social-icon-size: 20px;
-    }
-
-    #social-links {
-        gap: 8px;
-        right: 10px;
+        --header-padding: 16px;
     }
 }
 
@@ -105,14 +100,14 @@ header {
 @media (max-width: 480px) {
     :root{
         --header-height: 64px;
-        --logo-width: 130px;
+        --logo-width: 120px;
         --social-btn-size: 34px;
         --social-icon-size: 18px;
+        --header-padding: 12px;
     }
 
     #social-links {
-        gap: 6px;
-        right: 8px;
+        gap: 8px;
     }
 }
 </style>
@@ -121,29 +116,27 @@ header {
 <body>
 
 <header>
+    <!-- Logo Left -->
+    <img src="logo-small.png" alt="Trey The Ging Logo" id="logo-small">
 
-    <!-- Centered Logo -->
-    <img src="logo-small.png" alt="Trey The Ging Logo Small" id="logo-small">
-
-    <!-- Social Icons -->
-    <div id="social-links">
-        <a class="social-btn" href="https://instagram.com/treytheging" target="_blank">
+    <!-- Social Icons Right -->
+    <nav id="social-links" aria-label="Social Media Links">
+        <a class="social-btn" href="https://instagram.com/treytheging" target="_blank" rel="noopener">
             <img src="instagram.png" alt="Instagram">
         </a>
 
-        <a class="social-btn" href="https://reddit.com/u/treytheging" target="_blank">
+        <a class="social-btn" href="https://reddit.com/u/treytheging" target="_blank" rel="noopener">
             <img src="reddit.png" alt="Reddit">
         </a>
 
-        <a class="social-btn" href="https://youtube.com/@treytheging" target="_blank">
+        <a class="social-btn" href="https://youtube.com/@treytheging" target="_blank" rel="noopener">
             <img src="youtube.png" alt="YouTube">
         </a>
 
-        <a class="social-btn" href="https://discord.com/users/treytheging" target="_blank">
+        <a class="social-btn" href="https://discord.com/users/treytheging" target="_blank" rel="noopener">
             <img src="discord.png" alt="Discord">
         </a>
-    </div>
-
+    </nav>
 </header>
 
 <div class="content">
