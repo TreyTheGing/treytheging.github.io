@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trey The Ging</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trey The Ging</title>
 
-<style>
-body { 
-    margin: 0; 
-    font-family: Arial, sans-serif; 
-    background: #0f0f12; 
-    color: white; 
-    text-align: center; 
-}
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #0f0f12; 
+            color: white; 
+            text-align: center; 
+            padding: 0; 
+            position: relative; 
+        }
 
-/* ===== Fixed Header ===== */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
+        /* Small logo (top-right) */
+        #logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: auto;
+        }
 
-/* Large logo centered */
-#logo-large {
-    width: 200px;
-    height: auto;
-}
+        /* Header section */
+        header {
+            padding: 80px 20px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Small logo far right */
-#logo-small {
-    position: absolute;
-    right: 20px;
-    width: 70px;
-    height: auto;
-}
+        /* Large centered logo */
+        #logo-small {
+            width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-/* Push page content below fixed header */
-.content {
-    padding-top: 190px;
-}
+        /* Header title */
+        h1 { 
+            margin: 0; 
+            font-size: 2.5em;
+        }
 
-/* Paragraph */
-p { 
-    font-size: 1.2em; 
-}
+        /* Paragraph */
+        p { 
+            font-size: 1.2em; 
+        }
 
-/* Social links styling */
-a { 
-    display: block; 
-    margin: 10px auto; 
-    padding: 12px 20px; 
-    color: white; 
-    background: #1c1c1f; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    max-width: 250px;
-    transition: all 0.2s ease;
-}
-a:hover { 
-    background: white; 
-    color: black; 
-}
-</style>
+        /* Social links styling */
+        a { 
+            display: block; 
+            margin: 10px auto; 
+            padding: 12px 20px; 
+            color: white; 
+            background: #1c1c1f; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            max-width: 250px;
+            transition: all 0.2s ease;
+        }
+
+        a:hover { 
+            background: white; 
+            color: black; 
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <!-- Large centered logo -->
-    <img src="logo-large.png" alt="Trey The Ging Logo Large" id="logo-large">
+    <!-- Small logo in top-right (optional) -->
+    <img src="logo-small.png" alt="Trey The Ging Logo Small" id="logo-small">
 
-    <!-- Small logo on far right -->
-    <img src="logo-small.png" alt="Trey Th
+    <header>
+        <!-- Large centered logo -->
+        <img src="logo-large.png" alt="Trey The Ging Logo Large" id="logo-large">
+        <p>Social Links</p>
+    </header>
+
+    <a href="https://instagram.com/treytheging" target="_blank">Instagram</a>
+    <a href="https://reddit.com/u/treytheging" target="_blank">Reddit</a>
+    <a href="https://youtube.com/@treytheging" target="_blank">YouTube</a>
+    <a href="https://discord.com/users/treytheging" target="_blank">Discord</a>
+
+</body>
+</html>
