@@ -24,7 +24,7 @@ body {
     color: white; 
 }
 
-/* ===== Fixed Responsive Header ===== */
+/* ===== Fixed Header ===== */
 header {
     position: fixed;
     top: 0;
@@ -34,29 +34,27 @@ header {
     background: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
+    justify-content: center; /* centers logo */
     z-index: 1000;
 }
 
-/* Center logo wrapper */
-.logo-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
+/* Centered Logo */
 #logo-small {
     width: var(--logo-width);
     height: auto;
 }
 
-/* Social icons container */
+/* Social icons pinned right */
 #social-links {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     gap: 12px;
 }
 
+/* Social button styling */
 .social-btn {
     width: var(--social-btn-size);
     height: var(--social-btn-size);
@@ -70,7 +68,7 @@ header {
 
 .social-btn:hover {
     background: black;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .social-btn img {
@@ -78,53 +76,43 @@ header {
     height: var(--social-icon-size);
 }
 
-/* Push content below header */
+/* Push page content below header */
 .content {
-    padding-top: calc(var(--header-height) + 40px);
-    text-align: center;
+    padding-top: calc(var(--header-height) + 30px);
+}
+
+/* ========================= */
+/* ===== Tablet Styles ===== */
+/* ========================= */
+@media (max-width: 768px) {
+    :root{
+        --header-height: 70px;
+        --logo-width: 55px;
+        --social-btn-size: 38px;
+        --social-icon-size: 20px;
+    }
+
+    #social-links {
+        gap: 8px;
+        right: 10px;
+    }
 }
 
 /* ========================= */
 /* ===== Mobile Styles ===== */
 /* ========================= */
-
-@media (max-width: 768px) {
-
-    :root{
-        --header-height: 70px;
-        --logo-width: 50px;
-        --social-btn-size: 38px;
-        --social-icon-size: 20px;
-    }
-
-    header {
-        padding: 0 16px;
-    }
-
-    #social-links {
-        gap: 8px;
-    }
-
-}
-
 @media (max-width: 480px) {
-
     :root{
         --header-height: 64px;
-        --logo-width: 44px;
-        --social-btn-size: 44px;
-        --social-icon-size: 22px;
+        --logo-width: 48px;
+        --social-btn-size: 34px;
+        --social-icon-size: 18px;
     }
 
-    header {
-        padding: 0 12px;
-    }
-
-    /* Stack icons slightly tighter on very small screens */
     #social-links {
         gap: 6px;
+        right: 8px;
     }
-
 }
 </style>
 </head>
@@ -133,15 +121,10 @@ header {
 
 <header>
 
-    <!-- Empty spacer (left side balance) -->
-    <div style="flex:1;"></div>
-
     <!-- Centered Logo -->
-    <div class="logo-wrapper">
-        <img src="logo-small.png" alt="Trey The Ging Logo">
-    </div>
+    <img src="logo-small.png" alt="Trey The Ging Logo" id="logo-small">
 
-    <!-- Social Icons (Right Side) -->
+    <!-- Social Icons -->
     <div id="social-links">
         <a class="social-btn" href="https://instagram.com/treytheging" target="_blank">
             <img src="instagram.png" alt="Instagram">
